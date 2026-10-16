@@ -1,0 +1,10 @@
+"""Hibernate this Windows system."""
+
+import platform
+import subprocess
+
+
+if platform.system() != "Windows":
+	raise OSError("System hibernation is supported here only on Windows.")
+
+subprocess.run(["shutdown", "/h"], check=True)
